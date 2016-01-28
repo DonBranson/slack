@@ -1,0 +1,11 @@
+.erlang.mk/
+.idea/
+_rel/
+deps/
+ebin/
+sys.config.prod
+relx
+*.d
+*.beam
+.*.plt
+erl_crash.dump
