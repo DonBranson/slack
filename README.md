@@ -52,12 +52,13 @@ Add to your Makefile:
 
     DEPS = slack
 
-Include inets and slack in your app.src file:
+Include inets, ssl, and slack in your app.src file:
 
     {applications, [
         kernel,
         stdlib,
         inets,
+        ssl,
         slack
     ]},
 
