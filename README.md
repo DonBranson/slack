@@ -51,12 +51,17 @@ Add this to your sys.config, replacing with your token, which you can generate a
 Add to your Makefile:
 
     DEPS = slack
-    dep_slack = git https://github.com/DonBranson/slack
 
-Do this in your application:
+Include inets and slack in your app.src file:
 
-    inets:start(),
-    ssl:start(),
+    {applications, [
+        kernel,
+        stdlib,
+        inets,
+        slack
+    ]},
+
+You can use either of these functions to send notifications. The first uses the settings configured in your sys.config: 
+
     notification_library:notify("@channel Mousetrap starting"),
     notification_library:notify(Token, SlackChannel, UserName, Message, "@channel Mousetrap starting"),
-    ...
